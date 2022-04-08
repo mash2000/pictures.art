@@ -4732,7 +4732,7 @@ var showMoreStyles = function showMoreStyles(trigger, wrapper) {
 
   btn.addEventListener('click', function () {
     Object(_services_requests__WEBPACK_IMPORTED_MODULE_3__["getResource"])('assets/db.json').then(function (res) {
-      return createCards(res);
+      return createCards(res.styles);
     }).catch(function (error) {
       return console.log(error);
     });
@@ -4740,10 +4740,13 @@ var showMoreStyles = function showMoreStyles(trigger, wrapper) {
   });
 
   function createCards(response) {
-    response.forEach(function (item) {
+    response.forEach(function (_ref) {
+      var src = _ref.src,
+          title = _ref.title,
+          link = _ref.link;
       var card = document.createElement('div');
       card.classList.add('animated', 'fadeInUp', 'col-sm-3', 'col-sm-offset-0', 'col-xs-10', 'col-xs-offset-1');
-      card.innerHTML = "\n        <div class=\"styles-block\">\n          <img src=".concat(item.src, " alt>\n          <h4>").concat(item.title, "</h4>\n          <a href=\"").concat(item.link, "\">\u041F\u043E\u0434\u0440\u043E\u0431\u043D\u0435\u0435</a>\n        </div>\n      ");
+      card.innerHTML = "\n        <div class=\"styles-block\">\n          <img src=".concat(src, " alt>\n          <h4>").concat(title, "</h4>\n          <a href=\"").concat(link, "\">\u041F\u043E\u0434\u0440\u043E\u0431\u043D\u0435\u0435</a>\n        </div>\n      ");
       document.querySelector(wrapper).appendChild(card);
     });
   }
