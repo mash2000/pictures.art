@@ -35,6 +35,43 @@ const filter = () => {
 					no.classList.add('animated', 'fadeIn');
 			}
 	};
+
+	btnAll.addEventListener('click', () => {
+		typeFilter(markAll);
+	});
+
+	btnLovers.addEventListener('click', () => {
+			typeFilter(markLovers);
+	});
+
+	btnChef.addEventListener('click', () => {
+			typeFilter(markChef);
+	});
+
+	btnGuy.addEventListener('click', () => {
+			typeFilter(markGuy);
+	});
+
+	btnGirl.addEventListener('click', () => {
+			typeFilter(markGirl);
+	});
+
+	btnGrandmother.addEventListener('click', () => {
+			typeFilter();
+	});
+
+	btnGranddad.addEventListener('click', () => {
+			typeFilter();
+	});
+
+	menu.addEventListener('click', (e) => {
+			let target = e.target;
+
+			if (target && target.tagName == "LI") {
+					items.forEach(btn => btn.classList.remove('active'));
+					target.classList.add('active');
+			}
+	});
 };
 
 export default filter;
