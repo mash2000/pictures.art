@@ -1282,7 +1282,7 @@ h4 {
   text-align: center;
 }
 .pageup {
-  opacity: 1;
+  opacity: 0;
   width: 26px ;
   height: 26px;
   position: fixed;
